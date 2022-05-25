@@ -8,8 +8,9 @@
     --main-font: 'Poppins', sans-serif;
 }
 
-body{
+body, html{
     font-family: var(--main-font);
+    height: 100%;
 }
 *{
     margin: 0;
@@ -27,7 +28,12 @@ section{
 }
 
 .navbar{
+    position: fixed;
+    top: 0px;
+    z-index: 1;
     background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    z-index: 100;
 }
 .navbar .nav-wrapper{
     margin: auto;
@@ -69,59 +75,132 @@ section{
     color: var(--second-color);
     display: none;
 }
+
+.hero{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../IMG_0051\ 1.jpg");
+}
+.hero .heading{
+    position: absolute;
+    top: 30%;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50% , 0);
+    color: var(--second-color);
+    width: 100%;
+    z-index: 1;
+}
+.hero .heading h1{
+    font-size: 3rem;
+}
+.hero .heading h3{
+    font-size: 2rem;
+    font-weight: 500;
+}
+.hero .heading .map{
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 100;
+}
+.hero .heading .map span{
+    padding: 0 12px;
+}
+.hero .cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background-image: url("../cover.svg");
+}
+.hero .gradient{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+
 @media screen and (max-width: 768px){
-   .nav-wrapper{
-       padding: 10px;
-   }
-    .navbar .nav-wrapper .logo img{
-        width: 12rem;
+    .nav-wrapper{
+        padding: 10px;
     }
-    .menu-wrapper{
-        gap: 20px;  
-        font-size: 10px;
+     .navbar .nav-wrapper .logo img{
+         width: 12rem;
+     }
+     .menu-wrapper{
+         gap: 20px;  
+         font-size: 10px;
+     }
+ }
+ 
+ @media screen and (max-width: 425px){
+     .menu-wrapper{
+         position: absolute;
+         top: 90px;
+         background-color: var(--main-color);
+         display: block;
+         left: 50%;
+         transform: translateX(-50%);
+         width: 80%;
+         text-align: center;
+         border-radius: 10px;
+         padding-bottom: 20px;
+         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+         transition: .5s;
+     }
+     .menu-wrapper.active{
+         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+     }
+ 
+     .bx-x{
+         transform: rotate(360deg);
+         transition: .5s;
+     }
+ 
+     .nav-wrapper .bx{
+         transition: .5s;
+     }
+     
+     .menu-wrapper ul.menu{
+         display: block;
+         margin-bottom: 10px;
+         
+ 
+     }
+     .menu-wrapper ul.menu li.menu-item{
+         padding:10px;
+     }
+     .nav-wrapper .bx{
+         display: inherit;
+     }
+     .hero .heading{
+     }
+     .hero .heading h1{
+        font-size: 1rem;
     }
-}
+    .hero .heading h3{
+        font-size: .5rem;
+        font-weight: 500;
+    }
+    .hero .heading .map{
+        align-content: center;
+        display: flex;
+        justify-content: center;
+        font-weight: 100;
+        font-size: .7rem;
+    }
+    .hero .heading .map img{
+        width: 8px;
+    }
 
-@media screen and (max-width: 425px){
-    .menu-wrapper{
-        position: absolute;
-        top: 90px;
-        background-color: var(--main-color);
-        display: block;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80%;
-        text-align: center;
-        border-radius: 10px;
-        padding-bottom: 20px;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        transition: .5s;
-    }
-    .menu-wrapper.active{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    .bx-x{
-        transform: rotate(360deg);
-        transition: .5s;
-    }
-
-    .nav-wrapper .bx{
-        transition: .5s;
-    }
+     
     
-    .menu-wrapper ul.menu{
-        display: block;
-        margin-bottom: 10px;
-
-    }
-    .menu-wrapper ul.menu li.menu-item{
-        padding:10px;
-    }
-    .nav-wrapper .bx{
-        display: inherit;
-    }
-   
-    
-
-}
+     
+ 
+ }
