@@ -3,6 +3,7 @@
 :root{
     --main-color : #5B222B;
     --second-color : #FFFFFF;
+    --third-color : #463CB5;
 
     --main-font: 'Poppins', sans-serif;
 }
@@ -10,4 +11,56 @@
 body{
     background-color: var(--second-color);
     font-family: var(--main-font);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+section{
+    margin-top: 200px;
+}
+
+.container{
+    max-width: 1024px;
+}
+
+.navbar{
+    background-color: rgba(0, 0, 0, 100);
+}
+.navbar .nav-wrapper{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .nav-wrapper .logo img{
+    width: 15rem;
+}
+
+.menu-wrapper{
+    display: flex;
+    gap: 50px;
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.menu-wrapper ul.menu{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu-wrapper ul.menu li a{
+    color: var(--second-color);
+}
+
+.menu-wrapper .btn-login{
+    background-color: var(--third-color);
+    padding: 5px 15px;
+    border-radius: 8px;
+    color: var(--second-color);
 }
