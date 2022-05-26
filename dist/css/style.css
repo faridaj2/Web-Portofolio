@@ -353,6 +353,9 @@ section footer .container .contact h2{
         display: grid;
         grid-template-columns: auto;
     }
+    section footer .container .instansi{
+        display: none;
+    }
     section footer .container{
         display: block;
         text-align: center;
